@@ -35,7 +35,7 @@
 
 核心方法只在 `skill/intent-debugger/SKILL.md` 中维护；平台适配器只说明如何加载这份规则，不复制或改写核心方法。`agents/openai.yaml` 仅提供 Codex 的界面元数据。
 
-## 安装到 Codex
+## 在 Codex 中使用
 
 将 `skill/intent-debugger` 目录复制到 Codex 的个人 Skill 目录：
 

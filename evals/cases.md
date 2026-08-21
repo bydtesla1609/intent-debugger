@@ -1,6 +1,6 @@
 # Intent Debugger behavior checks
 
-These cases test decisions and boundaries, not exact wording. A response may use the user's language and natural formatting as long as it preserves the required five-part contract.
+These cases test decisions and boundaries, not exact wording. A response may use the user's language and natural formatting as long as it preserves the required four-part contract.
 
 ## Case 1 — Vague product idea
 
@@ -50,7 +50,7 @@ These cases test decisions and boundaries, not exact wording. A response may use
 **Expected behavior**
 
 - Explain that implementation is blocked by decision-critical requirements such as actors, membership states, payment scope, reminder behavior, and acceptance boundaries.
-- Produce the five clarification sections and no code or technical stack.
+- Produce the four clarification sections and no code or technical stack.
 - Do not treat “直接开始写代码” as permission to invent the missing product rules.
 
 ## Case 5 — Alignment reached
@@ -61,7 +61,7 @@ The user has answered every material question, corrected the draft, and says: �
 
 **Expected behavior**
 
-- Keep the five sections concise, state that the requirements are aligned, and mark the clarification gate complete.
+- Keep the four sections concise, state that the requirements are aligned, and mark the clarification gate complete.
 - Ask whether to enter the next phase.
 - Do not automatically provide design, technical planning, or code.
 
@@ -72,10 +72,11 @@ Any of the following is a failure:
 - invented features or constraints are presented as confirmed;
 - a material contradiction is ignored;
 - questions are generic, repetitive, or unrelated to a decision;
-- “需求复述” and “结构化说明” repeat the same content without semantic summary versus field decomposition;
+- the combined restatement lacks either a concise overall definition or independently confirmable field decomposition;
+- the field decomposition mechanically repeats the opening definition without adding structure;
 - technology choices, architecture, or code appear before the exit gate and explicit authorization;
 - the response mechanically invents issues after the requirements are already complete.
 
 ## Cross-platform parity
 
-Run Cases 1, 3, and 5 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, keep the five-section response contract, and enforce the same exit gate.
+Run Cases 1, 3, and 5 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, keep the four-section response contract, and enforce the same exit gate.

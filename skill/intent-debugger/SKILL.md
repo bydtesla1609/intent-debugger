@@ -25,20 +25,14 @@ Do not manufacture issues merely to fill a section. When no conflict or material
 
 ## Response contract
 
-Every clarification response must contain these five sections:
+Every clarification response must contain these four sections:
 
-The first two sections have different jobs and must not repeat the same prose:
+### 1. 结构化、专业化、规范化复述（Structured, Professional, and Standardized Restatement）
 
-- **Rephrased Intent is a semantic checksum.** In one concise paragraph, state what the user wants so they can catch a misunderstanding of the overall intent.
-- **Structured Specification is a requirements decomposition.** Break that intent into independently confirmable fields, including unresolved fields. It should make missing decisions visible rather than paraphrasing the summary again.
+Combine semantic confirmation and requirements decomposition in one section:
 
-### 1. 需求复述（Rephrased Intent）
-
-Restate the intended outcome professionally and concisely without expanding it. Keep this as a coherent summary rather than a field list.
-
-### 2. 结构化说明（Structured Specification）
-
-Cover the applicable items below:
+1. Begin with a concise, coherent definition of what the user wants so they can catch an overall misunderstanding.
+2. Then break the same intent into the applicable fields below so each part can be confirmed independently:
 
 - 功能目标（What）
 - 使用场景（Why）
@@ -46,17 +40,17 @@ Cover the applicable items below:
 - 用户流程（User Flow）
 - 约束或假设（Constraints / Assumptions）
 
-Omit an inapplicable item or mark it as unresolved; never invent content to make the template look complete.
+Use precise product, software, AI, or domain terminology where it improves clarity. Preserve the original meaning, mark unresolved fields explicitly, and never invent content to make the structure look complete. Do not restate the opening definition verbatim in every field.
 
-### 3. 潜在问题（Potential Issues）
+### 2. 潜在问题（Potential Issues）
 
 List material ambiguities, conflicts, boundary cases, and risks. Explain why each item affects the requirement. Clearly state when none has been identified.
 
-### 4. 澄清问题（Clarifying Questions）
+### 3. 澄清问题（Clarifying Questions）
 
 Ask a focused set of questions tied to the issues above. Prefer choices or concrete decision points when the valid options are known, while allowing the user to correct an incomplete set of options.
 
-### 5. 对齐确认（Alignment）
+### 4. 对齐确认（Alignment）
 
 State that the current specification is a draft and ask the user to confirm or correct it before proceeding. A suitable closing is:
 
@@ -70,6 +64,6 @@ Remain in clarification while any key issue could materially change the requeste
 - all decision-critical questions are answered;
 - no major ambiguity or conflict remains.
 
-Entering design, technical planning, or implementation additionally requires the user's explicit authorization. Confirmation alone does not authorize those activities. When the gate is satisfied, keep the five-section response contract but make it concise, report that alignment is complete, and ask whether to enter the requested next phase. Do not generate that phase in the same response unless the user explicitly asked to proceed immediately after alignment.
+Entering design, technical planning, or implementation additionally requires the user's explicit authorization. Confirmation alone does not authorize those activities. When the gate is satisfied, keep the four-section response contract but make it concise, report that alignment is complete, and ask whether to enter the requested next phase. Do not generate that phase in the same response unless the user explicitly asked to proceed immediately after alignment.
 
 If the user's initial request already contains an explicit request to implement but remains ambiguous, use this skill first and explain which decisions block implementation. If the request is already precise and only execution is needed, do not activate this skill.

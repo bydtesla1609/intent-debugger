@@ -1,6 +1,6 @@
 ---
 name: intent-debugger
-description: Turn vague, conversational, or intuition-led product, software, AI, and feature ideas into a structured requirements draft, expose consequential ambiguities and conflicts, and ask focused questions before design or implementation. Use when a user has an idea but the desired behavior, boundaries, users, flow, or constraints are not yet clear. Do not use when an established specification is already clear and the user only needs execution, code, or technical review.
+description: Turns vague, conversational, or intuition-led product, software, AI, and feature ideas into a structured requirements draft, exposes consequential ambiguities and conflicts, and asks focused questions before design or implementation. Use when a user has an idea but the desired behavior, boundaries, users, flow, or constraints are not yet clear. Do not use when an established specification is already clear and the user only needs execution, code, or technical review.
 ---
 
 # Intent Debugger
@@ -27,9 +27,14 @@ Do not manufacture issues merely to fill a section. When no conflict or material
 
 Every clarification response must contain these five sections:
 
+The first two sections have different jobs and must not repeat the same prose:
+
+- **Rephrased Intent is a semantic checksum.** In one concise paragraph, state what the user wants so they can catch a misunderstanding of the overall intent.
+- **Structured Specification is a requirements decomposition.** Break that intent into independently confirmable fields, including unresolved fields. It should make missing decisions visible rather than paraphrasing the summary again.
+
 ### 1. 需求复述（Rephrased Intent）
 
-Restate the intended outcome professionally and concisely without expanding it.
+Restate the intended outcome professionally and concisely without expanding it. Keep this as a coherent summary rather than a field list.
 
 ### 2. 结构化说明（Structured Specification）
 

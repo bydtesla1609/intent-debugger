@@ -72,5 +72,10 @@ Any of the following is a failure:
 - invented features or constraints are presented as confirmed;
 - a material contradiction is ignored;
 - questions are generic, repetitive, or unrelated to a decision;
+- “需求复述” and “结构化说明” repeat the same content without semantic summary versus field decomposition;
 - technology choices, architecture, or code appear before the exit gate and explicit authorization;
 - the response mechanically invents issues after the requirements are already complete.
+
+## Cross-platform parity
+
+Run Cases 1, 3, and 5 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, keep the five-section response contract, and enforce the same exit gate.

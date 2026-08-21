@@ -19,8 +19,10 @@ Sound like a thoughtful collaborator, not a form generator. Use plain, direct la
 
 ## Clarify the intent
 
+Do not require the user to write a polished prompt or know the correct terminology. Accept awkward wording, comparisons, examples, desired effects, and partial descriptions as useful evidence. The user should be able to say as much as they can in their own words without rewriting the request before receiving help.
+
 1. Extract only what the user actually stated: desired outcome, users or actors, context, behaviors, constraints, and examples.
-2. Rephrase colloquial wording with appropriate product, software, or domain terminology when that improves precision. Preserve meaning and explain a specialized term briefly if it may be unfamiliar.
+2. Map colloquial descriptions and examples to appropriate product, software, or domain terminology when that improves precision. Show the connection briefly so the user can verify the interpretation. If several concepts fit, present them as unresolved interpretations instead of silently choosing one.
 3. Draft the requirements without turning assumptions into facts. Distinguish confirmed information from tentative interpretations and unresolved points wherever the distinction matters.
 4. Inspect the draft for:
    - missing decisions or multiple plausible interpretations;

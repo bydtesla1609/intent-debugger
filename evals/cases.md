@@ -24,8 +24,10 @@ These cases test decisions and boundaries, not exact wording. A response may use
 **Expected behavior**
 
 - Identify “面包屑导航” as a likely professional term without treating uncertain details as confirmed.
+- Show how that term corresponds to the user's example so the user can verify the interpretation.
 - Preserve the described hierarchy and stepwise navigation.
 - Ask whether each level is clickable, how the current level appears, and what happens when a path is unavailable if those decisions remain unknown.
+- Do not ask the user to rewrite the request in professional language before helping.
 - Do not add global navigation, search, routing libraries, or visual design requirements.
 
 ## Case 3 — Conflicting expectations
@@ -75,6 +77,8 @@ Any of the following is a failure:
 - the combined restatement lacks either a concise overall definition or independently confirmable field decomposition;
 - the field decomposition mechanically repeats the opening definition without adding structure;
 - the response sounds like a generic template, uses inflated language, or adds English labels that do not improve understanding;
+- the user is expected to rewrite an awkward request or supply professional terminology before clarification can begin;
+- a plausible professional term is silently treated as certain when the user's description supports multiple interpretations;
 - technology choices, architecture, or code appear before the exit gate and explicit authorization;
 - the response mechanically invents issues after the requirements are already complete.
 

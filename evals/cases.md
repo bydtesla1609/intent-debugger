@@ -64,7 +64,7 @@ The user has answered every material question, corrected the draft, and says: �
 **Expected behavior**
 
 - Keep the four sections concise, state that the requirements are aligned, and mark the clarification gate complete.
-- Ask whether to enter the next phase.
+- Stop without suggesting a planning mode or asking the user to choose a next phase they did not mention.
 - Do not automatically provide design, technical planning, or code.
 
 ## Failure conditions
@@ -80,6 +80,7 @@ Any of the following is a failure:
 - the user is expected to rewrite an awkward request or supply professional terminology before clarification can begin;
 - a plausible professional term is silently treated as certain when the user's description supports multiple interpretations;
 - technology choices, architecture, or code appear before the exit gate and explicit authorization;
+- a planning mode is presented as the required or recommended next step after clarification;
 - the response mechanically invents issues after the requirements are already complete.
 
 ## Case 6 — Boundary with Plan
@@ -92,7 +93,7 @@ Any of the following is a failure:
 
 - Do not activate Intent Debugger merely because the user asked for a plan.
 - Leave repository inspection, implementation steps, affected areas, and verification strategy to the planning mode.
-- Activate only if the supposedly confirmed requirement still contains a decision-critical product ambiguity.
+- Do not insert or recommend an Intent Debugger → Plan sequence that the user did not request.
 
 ## Cross-platform parity
 

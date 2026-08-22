@@ -11,6 +11,8 @@ Use this adapter with the DeepSeek API or a client that lets you set a system pr
 3. Send the user's rough idea as the following `user` message.
 4. For each stateless API request, retain the system message and the relevant clarification history until alignment is complete.
 
+For ordinary requirements clarification, `SKILL.md` is sufficient. If the user explicitly asks to package feedback about Intent Debugger as a public contribution candidate, append the complete contents of `skill/intent-debugger/references/contribution-candidate.md` to the same system message as well. DeepSeek cannot follow a local Markdown link unless the calling application supplies that file's contents.
+
 Minimal message shape:
 
 ```json

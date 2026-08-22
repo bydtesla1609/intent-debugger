@@ -33,6 +33,8 @@ Do not require the user to write a polished prompt or know the correct terminolo
 
 Do not manufacture issues merely to fill a section. When no conflict or material risk is evident, say so and list only the remaining unknowns.
 
+On every follow-up turn, update the existing draft instead of restarting discovery. Preserve settled information unless the user revises it, apply corrections explicitly, remove resolved issues and answered questions, and ask only about decisions that still matter. If a new answer changes an earlier assumption, show the corrected understanding rather than carrying both versions forward.
+
 ## Boundary with planning modes
 
 This skill establishes what should be built. A planning mode decides how an aligned requirement should be implemented in a particular project.
@@ -81,7 +83,7 @@ Ask a focused set of questions tied to the issues above. Prefer choices or concr
 
 ### 4. 当前共识
 
-Evaluate the current state of alignment from the conversation so far. State what appears settled, what still blocks agreement, and whether the draft is ready for the user's confirmation. Do not replace this judgment with a generic “still a draft” disclaimer, and do not treat your own assessment as the user's confirmation.
+Evaluate the current state of alignment from the conversation so far. Ground the assessment in confirmed information and unresolved decision points: state what appears settled, what changed in the latest turn when relevant, what still blocks agreement, and whether the draft is ready for the user's confirmation. Do not replace this judgment with a generic “still a draft” disclaimer, do not call the draft aligned merely because it sounds coherent, and do not treat your own assessment as the user's confirmation.
 
 When confirmation is still needed, close naturally, for example:
 

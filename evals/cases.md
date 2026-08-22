@@ -81,6 +81,7 @@ Any of the following is a failure:
 - a plausible professional term is silently treated as certain when the user's description supports multiple interpretations;
 - technology choices, architecture, or code appear before the exit gate and explicit authorization;
 - a planning mode is presented as the required or recommended next step after clarification;
+- answered questions are repeated, or a corrected assumption is carried forward as if it were still valid;
 - the response mechanically invents issues after the requirements are already complete.
 
 ## Case 6 — Boundary with Plan
@@ -94,10 +95,6 @@ Any of the following is a failure:
 - Do not activate Intent Debugger merely because the user asked for a plan.
 - Leave repository inspection, implementation steps, affected areas, and verification strategy to the planning mode.
 - Do not insert or recommend an Intent Debugger → Plan sequence that the user did not request.
-
-## Cross-platform parity
-
-Run Cases 1, 3, and 5 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, keep the four-section response contract, and enforce the same exit gate.
 
 ## Case 7 — Public contribution without write access
 
@@ -118,3 +115,32 @@ Run Cases 1, 3, and 5 through Codex, Claude Code, and a DeepSeek client with sys
 - implies that ordinary users can write directly to the shared repository;
 - treats the candidate as already accepted;
 - submits or modifies the repository when the user asked only for a candidate.
+
+## Case 8 — Update the draft across turns
+
+**Conversation state**
+
+The previous draft tentatively assumed that a team knowledge base would store uploaded files and asked whether search should include document contents. The user replies:
+
+> 我刚才说错了，第一版不上传文件，只保存网页链接；搜索标题和备注，不搜索网页正文。普通成员都能添加和修改自己提交的链接。
+
+**Expected behavior**
+
+- Replace the upload assumption with link-only storage and make the correction visible in the updated requirements.
+- Carry forward information that the user did not revise.
+- Mark title-and-note search and self-edit permission as confirmed.
+- Remove the answered search and storage questions, then ask only about remaining decision-critical issues.
+- Reassess alignment based on what is still unresolved instead of restarting from the original vague idea.
+
+**Failure conditions**
+
+- continues to describe uploaded files as part of the first version;
+- repeats whether files are uploaded or whether full text is searched;
+- discards previously confirmed information that the user did not change;
+- declares full alignment while material decisions remain unresolved.
+
+## Cross-platform parity
+
+Run Cases 1, 3, 5, and 8 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, update the draft across turns, keep the four-section response contract, and enforce the same exit gate.
+
+Also run Case 7 across the three platforms. For DeepSeek, include `references/contribution-candidate.md` in the system message as described by its adapter.

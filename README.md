@@ -29,8 +29,6 @@ Intent Debugger 处理的是需求，Plan 处理的是执行。
 | 主要产出 | 整理后的需求、尚未解决的问题、需要用户确认的选择 | 结合现有项目形成的实施步骤、改动范围和验证办法 |
 | 是否进入技术层面 | 不进入 | 可以进入，但仍不等于已经开始执行 |
 
-这张表只是在比较两者的职责，不表示固定使用顺序。你可以单独使用 Intent Debugger 得到一份需求说明，也可以在需求已经清楚时直接使用 Plan。使用 Intent Debugger 之后，下一步也不必是 Plan：保存需求、继续讨论、交给其他人处理或暂时停在这里都可以。
-
 ## 仓库结构
 
 ```text
@@ -55,8 +53,6 @@ Intent Debugger 处理的是需求，Plan 处理的是执行。
         └── agents/
             └── openai.yaml
 ```
-
-核心方法只在 `skill/intent-debugger/SKILL.md` 中维护；平台适配器只说明如何加载这份规则，不复制或改写核心方法。`agents/openai.yaml` 仅提供 Codex 的界面元数据。
 
 ## 在 Codex 中使用
 
@@ -104,11 +100,11 @@ DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对�
 
 ## 完整示例
 
-[`examples/team-knowledge-base.md`](examples/team-knowledge-base.md) 展示了一个完整过程：用户先用很口语的方式描述“团队找资料”，Intent Debugger 经过两轮确认形成一份已经对齐的需求说明。示例到这里结束，不预设后续使用哪种工具或模式。
+[`examples/team-knowledge-base.md`](examples/team-knowledge-base.md) 展示了一个完整过程：用户先用很口语的方式描述“团队找资料”，Intent Debugger 经过两轮确认形成一份已经对齐的需求说明。
 
 ## 验收
 
-使用 [`evals/cases.md`](evals/cases.md) 中的场景进行行为验收。重点检查实际决策，而不是逐字匹配标题：
+使用 [`evals/cases.md`](evals/cases.md) 中的场景进行行为验收。重点检查实际决策：
 
 - 是否在不改变用户目标的前提下，形成了有依据、可核对的需求理解；
 - 是否把合理推断标为暂定理解，而不是用户已经确认的事实；
@@ -117,14 +113,3 @@ DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对�
 - 是否在未对齐前避免技术方案和代码。
 - 需求梳理是否既准确，又比用户原话更清楚、更具体；
 - 表达是否自然，有没有机械套模板、重复解释或滥用术语。
-
-## 宣传图片
-
-- `assets/social-preview.jpg`：GitHub 社交预览横图，尺寸为 1280 × 640。
-- `assets/xiaohongshu-cover.jpg`：小红书等移动端平台使用的 3:4 竖版封面，尺寸为 1200 × 1600。
-
-两张图表达的都是“把模糊想法整理成清晰需求”，不把 Intent Debugger 与 Plan 画成固定流程。
-
-## 边界
-
-本 Skill 负责把需求说清楚，不负责架构、技术选型、开发排期或代码实现，也不是 Plan 的固定前置步骤。需求已经完整时，简短确认就够了，不要为了套流程继续制造问题或推荐下一阶段。

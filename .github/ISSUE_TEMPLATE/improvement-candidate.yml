@@ -1,0 +1,75 @@
+name: 改进候选
+description: 提交由你或 AI 整理的功能、规则或文档改进建议
+title: "[候选] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        没有仓库写入权限也可以提交候选。AI 可以帮助整理内容，但候选仍需由提交者确认，并由维护者审核。
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 问题场景
+      description: 在什么情况下遇到了什么问题？请提供可以核对的例子。
+      placeholder: 我在……时发现……
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: 修改目标
+      description: 希望结果发生什么变化？
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议改动
+      description: 描述建议调整的规则、文档、示例或适配器。可以粘贴经你确认的 AI 整理结果。
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: 保持不变的边界
+      description: 哪些行为不应受到影响？有哪些内容明确不在本候选范围内？
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 可能影响
+      description: 可能涉及哪些文件、平台、使用场景或现有行为？不确定的地方可以明确写“不确定”。
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: 未决问题
+      description: 还有哪些事项需要维护者判断？如果没有，请填写“无”。
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收方法
+      description: 怎样判断这项候选被正确实现，并且没有破坏已有边界？
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经检查 AI 生成的内容，它符合我的真实意思。
+          required: true
+        - label: 我没有提交密码、令牌、私人对话或其他敏感信息。
+          required: true
+        - label: 我理解这只是待审核候选，不代表项目已经接受该改动。
+          required: true

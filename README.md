@@ -33,6 +33,10 @@ Intent Debugger 处理的是需求，Plan 处理的是执行。
 
 ```text
 .
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   └── improvement-candidate.yml
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── adapters/
 │   ├── claude-code/
 │   │   └── README.md
@@ -41,6 +45,7 @@ Intent Debugger 处理的是需求，Plan 处理的是执行。
 ├── assets/
 │   ├── social-preview.jpg
 │   └── xiaohongshu-cover.jpg
+├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
 ├── evals/
@@ -101,6 +106,13 @@ DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对�
 ## 完整示例
 
 [`examples/team-knowledge-base.md`](examples/team-knowledge-base.md) 展示了一个完整过程：用户先用很口语的方式描述“团队找资料”，Intent Debugger 经过两轮确认形成一份已经对齐的需求说明。
+
+## 参与贡献
+
+没有仓库写入权限也可以贡献。AI 可以先把使用反馈整理成规范的改进候选，用户核对后通过公开 Issue 提交；已经准备好具体修改的用户，也可以 Fork 仓库并发起 Pull Request。所有候选都由维护者公开审核，不会因为是 AI 生成就自动写入或合并。
+
+- [提交改进候选](../../issues/new?template=improvement-candidate.yml)
+- [查看完整贡献说明](CONTRIBUTING.md)
 
 ## 验收
 

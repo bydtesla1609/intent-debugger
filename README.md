@@ -55,8 +55,10 @@ Intent Debugger 处理的是需求，Plan 处理的是执行。
 └── skill/
     └── intent-debugger/
         ├── SKILL.md
-        └── agents/
-            └── openai.yaml
+        ├── agents/
+        │   └── openai.yaml
+        └── references/
+            └── contribution-candidate.md
 ```
 
 ## 在 Codex 中使用
@@ -109,7 +111,7 @@ DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对�
 
 ## 参与贡献
 
-没有仓库写入权限也可以贡献。AI 可以先把使用反馈整理成规范的改进候选，用户核对后通过公开 Issue 提交；已经准备好具体修改的用户，也可以 Fork 仓库并发起 Pull Request。所有候选都由维护者公开审核，不会因为是 AI 生成就自动写入或合并。
+没有仓库写入权限也可以贡献。用户明确提出时，Intent Debugger 可以先把使用反馈整理成规范的改进候选；用户核对后通过公开 Issue 提交，已经准备好具体修改的用户也可以 Fork 仓库并发起 Pull Request。所有候选都由维护者公开审核，不会因为是 AI 生成就自动写入或合并。
 
 - [提交改进候选](../../issues/new?template=improvement-candidate.yml)
 - [查看完整贡献说明](CONTRIBUTING.md)

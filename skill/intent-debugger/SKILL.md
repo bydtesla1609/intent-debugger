@@ -1,6 +1,6 @@
 ---
 name: intent-debugger
-description: Interprets vague, conversational, or intuition-led product, software, AI, and feature ideas as a precise, checkable requirements draft, maps rough descriptions to useful professional terms, exposes consequential ambiguities and conflicts, and asks focused questions without producing implementation plans or code. Use when the user knows roughly what they want but cannot yet state the behavior, boundaries, users, flow, or constraints clearly. Do not use when a confirmed specification only needs planning, execution, code, or technical review.
+description: Interprets vague, conversational, or intuition-led product, software, AI, and feature ideas as a precise, checkable requirements draft, maps rough descriptions to useful professional terms, exposes consequential ambiguities and conflicts, and asks focused questions without producing implementation plans or code. Use when the user knows roughly what they want but cannot yet state the behavior, boundaries, users, flow, or constraints clearly, or explicitly asks to package feedback about this skill as a public contribution candidate. Do not use when a confirmed specification only needs planning, execution, code, or technical review.
 ---
 
 # Intent Debugger
@@ -45,6 +45,12 @@ Both may ask questions, but for different decisions:
 - Leave repository structure, technical choices, implementation sequencing, migration, and verification strategy outside this skill.
 
 If the user asks only for an implementation plan, do not activate this skill merely because planning may include its own clarification questions. If the user explicitly invokes this skill, stay within requirements clarification and stop when its work is complete.
+
+## Public contribution candidates
+
+When the user explicitly asks to turn feedback about this skill into a contribution candidate, read and follow [references/contribution-candidate.md](references/contribution-candidate.md). This is a separate, opt-in workflow: do not suggest it merely because clarification has finished or because the conversation reveals a possible improvement.
+
+For users without repository write access, produce a reviewable candidate that the user can submit through the public repository. Do not claim that only maintainers may propose changes, do not imply that all users can write directly to the repository, and do not treat candidate generation as permission to submit or merge anything remotely.
 
 ## Response contract
 

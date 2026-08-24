@@ -1,6 +1,8 @@
 # Intent Debugger｜需求澄清与意图对齐
 
-很多用户在使用 AI 工具完成项目的时候并不是没有想法，而是很难把想法说清楚：不知道对应的专业术语、描述比较零散、逻辑相对模糊，这就使得 AI 做出来的东西经常事与愿违。Intent Debugger 会把用户的需求整理成清楚、结构化、可核对的说明，并通过反问确认 AI 与用户是否理解一致。
+## 写在最前面
+
+当永用户想让 AI 做一个方案， AI 以技术手段为导向写了很多看不懂的专业词汇，用户有时候无法判断到底有没有真正理解自己的需求，但如果能让 AI 以最终做出来的效果为导向来生成方案，就可以更清晰地看到 AI 是否与用户的需求对齐。
 
 ## 它解决什么问题
 
@@ -33,38 +35,6 @@ Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目�
 | 主要产出 | 整理后的需求、需要用户确认的问题 | 结合现有项目形成的实施步骤、改动范围和验证办法 |
 | 是否进入技术层面 | 不进入 | 可以进入 |
 
-## 仓库结构
-
-```text
-.
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   └── improvement-candidate.yml
-│   └── PULL_REQUEST_TEMPLATE.md
-├── adapters/
-│   ├── claude-code/
-│   │   └── README.md
-│   └── deepseek/
-│       └── README.md
-├── assets/
-│   ├── social-preview.jpg
-│   └── xiaohongshu-cover.jpg
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── evals/
-│   └── cases.md
-├── examples/
-│   └── team-knowledge-base.md
-└── skill/
-    └── intent-debugger/
-        ├── SKILL.md
-        ├── agents/
-        │   └── openai.yaml
-        └── references/
-            └── contribution-candidate.md
-```
-
 ## 在 Codex 中使用
 
 将 `skill/intent-debugger` 目录复制到 Codex 的个人 Skill 目录：
@@ -96,7 +66,7 @@ DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对�
 
 ## 预期输出
 
-每轮澄清都包含：
+每轮回答都包含：
 
 1. 需求梳理
 2. 还没说清楚的地方
@@ -112,6 +82,38 @@ DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对�
 ## 完整示例
 
 [`examples/team-knowledge-base.md`](examples/team-knowledge-base.md) 展示了一个完整过程：用户先用很口语的方式描述“团队找资料”，Intent Debugger 经过两轮确认形成一份已经对齐的需求说明。
+
+## 仓库结构
+
+```text
+.
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   └── improvement-candidate.yml
+│   └── PULL_REQUEST_TEMPLATE.md
+├── adapters/
+│   ├── claude-code/
+│   │   └── README.md
+│   └── deepseek/
+│       └── README.md
+├── assets/
+│   ├── social-preview.jpg
+│   └── xiaohongshu-cover.jpg
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── evals/
+│   └── cases.md
+├── examples/
+│   └── team-knowledge-base.md
+└── skill/
+    └── intent-debugger/
+        ├── SKILL.md
+        ├── agents/
+        │   └── openai.yaml
+        └── references/
+            └── contribution-candidate.md
+```
 
 ## 参与贡献
 

@@ -1,43 +1,60 @@
-# Intent Debugger｜需求澄清与意图对齐
+<p align="center">
+  <img src="assets/social-preview.jpg" alt="Intent Debugger：把模糊想法整理成清晰需求" width="960">
+</p>
 
-## 写在最前面
+<h1 align="center">Intent Debugger</h1>
 
-当永用户想让 AI 做一个方案， AI 以技术手段为导向写了很多看不懂的专业词汇，用户有时候无法判断到底有没有真正理解自己的需求，但如果能让 AI 以最终做出来的效果为导向来生成方案，就可以更清晰地看到 AI 是否与用户的需求对齐。
+<p align="center">
+  <strong>需求澄清与意图对齐</strong><br>
+  把说不清的想法，整理成清楚、具体、可核对的需求。
+</p>
 
-## 它解决什么问题
+<p align="center">
+  <a href="skill/intent-debugger/SKILL.md"><img src="https://img.shields.io/badge/Codex-Skill-111827" alt="Codex Skill"></a>
+  <a href="adapters/claude-code/README.md"><img src="https://img.shields.io/badge/Claude_Code-Compatible-D97757" alt="Claude Code Compatible"></a>
+  <a href="adapters/deepseek/README.md"><img src="https://img.shields.io/badge/DeepSeek-Compatible-4D6BFE" alt="DeepSeek Compatible"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/bydtesla1609/intent-debugger?color=2563eb" alt="License"></a>
+  <a href="https://github.com/bydtesla1609/intent-debugger/stargazers"><img src="https://img.shields.io/github/stars/bydtesla1609/intent-debugger?style=flat&amp;color=f5a623" alt="GitHub Stars"></a>
+</p>
 
-你在使用 AI 工具时，是否遇到过这些问题？
+<p align="center">
+  <a href="#-快速开始">⚡ 快速开始</a>
+  &nbsp;·&nbsp;
+  <a href="examples/team-knowledge-base.md">💬 完整示例</a>
+  &nbsp;·&nbsp;
+  <a href="#-它和-plan-模式有什么不同">🧭 与 Plan 的区别</a>
+  &nbsp;·&nbsp;
+  <a href="#-参与贡献">🤝 参与贡献</a>
+</p>
 
-- 用 AI 做项目，脑子里明明知道自己想要什么，但就是说不清楚，也不知道对应的专业名词；
-- 已经尽量描述了需求，AI 却理解成了另一件事；
-- 还没来得及确认 AI 是否真的理解，它就开始设计或写代码，最后发现错在起跑线上。
+> [!NOTE]
+> **写在最前面**
+>
+> 当用户让 AI 设计一个项目或功能时，AI 很容易先列出一大串技术手段。对不熟悉这些术语的用户来说，这些内容看起来很专业，却很难用来判断 AI 是否真正理解了需求。Intent Debugger 暂时把“准备怎么实现”放到一边，先从最终效果、使用方式和功能边界出发，形成一份双方都能看懂、也能逐项核对的需求理解。
 
-你不需要先学会写提示词，也不需要把自己的话改得很专业。只要尽量说出想要的效果、使用方式、担心的问题和能想到的例子，哪怕表达得绕、很别扭，或者只能说“有点像某个东西”，这些都可以成为理解需求的依据。
+很多人并不是没有想法，而是很难一次把想法说清楚：脑中已经有了大概的样子，却不知道对应的专业术语；已经尽量描述，AI 还是理解成了另一件事；双方还没核对清楚，AI 就开始设计或写代码，最后发现方向从一开始就偏了。
 
-Intent Debugger 会完成以下工作：
-
-- 在有明确依据时找到合适的专业术语，并让你看得出它与原描述的对应关系；
-- 梳理目标、使用场景、核心功能、用户流程和约束，形成结构化、可核对的需求说明；
-- 区分已经确认的内容、合理但暂定的理解和仍待决定的问题；
-- 找出描述中的歧义、冲突、边界情况和潜在风险；
-- 通过具体反问，根据你的回答持续修正需求说明，直到你确认理解一致；
-- 不主动进入设计或实现，而是依据当前信息说明需求理解的对齐程度。
+Intent Debugger 不要求你先学会写专业提示词。你只需要尽量说出想要的效果、使用方式、担心的问题和能想到的例子。哪怕表达得绕、很别扭，或者只能说“有点像某个东西”，它也会把这些信息整理成一份有依据、可核对的需求理解，让你判断：**AI 理解的，究竟是不是你想做的。**
 
 这里形成的是需求说明，不是技术方案或实施计划。
 
-## 它和 Codex 的 Plan 模式有什么不同
+---
 
-Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目里准备怎么做”。
+## 🧩 它会做什么
 
-| | Intent Debugger | Plan 模式 |
-|---|---|---|
-| 要回答的问题 | 到底要做什么，为什么做，边界在哪里？ | 已经确认的需求该怎么落地？ |
-| 主要产出 | 整理后的需求、需要用户确认的问题 | 结合现有项目形成的实施步骤、改动范围和验证办法 |
-| 是否进入技术层面 | 不进入 | 可以进入 |
+| | 能力 | | 能力 |
+| --- | --- | --- | --- |
+| 🏷️ | **术语映射**：有依据地把口语描述换成更准确的专业说法，并保留对应关系 | 🧭 | **需求梳理**：整理目标、场景、功能、流程和约束 |
+| 🔎 | **问题检查**：发现歧义、冲突、信息缺口、边界情况和潜在风险 | ❓ | **定向追问**：只追问会影响需求判断和取舍的具体问题 |
+| 🔄 | **持续修订**：根据后续回答更新同一份草稿，不让对话每轮重新开始 | ✅ | **对齐判断**：区分已确认、暂定理解和待决定内容，说明当前对齐程度 |
 
-## 在 Codex 中使用
+它不会为了显得专业而堆术语，也不会把 AI 自己想到的新功能偷偷写进需求。需要推断的地方会明确标为暂定理解，交给你确认。
 
-将 `skill/intent-debugger` 目录复制到 Codex 的个人 Skill 目录：
+## ⚡ 快速开始
+
+### Codex
+
+将 [`skill/intent-debugger`](skill/intent-debugger) 复制到 Codex 的个人 Skill 目录：
 
 ```text
 $CODEX_HOME/skills/intent-debugger
@@ -46,91 +63,107 @@ $CODEX_HOME/skills/intent-debugger
 重新加载 Skill 后，可以显式调用：
 
 ```text
-使用 $intent-debugger 帮我澄清这个想法：我想做一个帮助团队找资料的工具。
+使用 $intent-debugger 帮我梳理这个想法：我想做一个帮助团队找资料的工具。
 ```
 
-它也允许在明显属于模糊需求澄清的场景中被自动选择。
+在明显属于模糊需求澄清的场景中，Codex 也可以根据 Skill 描述自动选择它。
 
-## 在 Claude Code 中使用
+### Claude Code
 
-Claude Code 原生支持 `SKILL.md`。把 `skill/intent-debugger` 复制到以下任一位置：
+Claude Code 支持读取 `SKILL.md`。将 [`skill/intent-debugger`](skill/intent-debugger) 复制到以下任一位置：
 
 - 个人级：`~/.claude/skills/intent-debugger/`
 - 项目级：`.claude/skills/intent-debugger/`
 
-然后输入 `/intent-debugger` 显式调用，也可以由 Claude Code 根据 `description` 自动选择。详见 [`adapters/claude-code/README.md`](adapters/claude-code/README.md)。
+然后输入 `/intent-debugger` 显式调用，也可以由 Claude Code 根据 `description` 选择。具体说明见 [Claude Code 适配指南](adapters/claude-code/README.md)。
 
-## 在 DeepSeek 中使用
+### DeepSeek
 
-DeepSeek API 没有与 Claude Code 相同的文件式 Skill 发现机制。对于 DeepSeek API 或支持 system prompt 的客户端，把 `skill/intent-debugger/SKILL.md` 的完整内容作为首条 `system` 消息，把具体想法作为 `user` 消息。详见 [`adapters/deepseek/README.md`](adapters/deepseek/README.md)。
+DeepSeek API 没有相同的文件式 Skill 发现机制。使用 DeepSeek API 或支持 system prompt 的客户端时，将 [`SKILL.md`](skill/intent-debugger/SKILL.md) 的完整内容作为首条 `system` 消息，再把具体想法作为 `user` 消息发送。具体说明见 [DeepSeek 适配指南](adapters/deepseek/README.md)。
 
-## 预期输出
+> 三个平台共用同一份核心 Skill。适配指南说明的是加载方式，不代表已经对所有客户端版本做过相同的实时效果测试。
 
-每轮回答都包含：
+## 🧾 你会得到什么
 
-1. 需求梳理
-2. 还没说清楚的地方
-3. 需要你确认的问题
-4. 当前共识
-   
-第一部分叫“需求梳理”。它先用一两句话给出 AI 当前对需求的整体理解，让用户能马上判断方向有没有理解错；再按目标、场景、功能、流程和约束展开。该换成专业术语的地方就换，但不堆术语，不故作高深。
+每轮澄清都会围绕四部分展开：
 
-例如，用户说“在网页中加上首页 / 控制面板 / 键盘这样一级一级跳过去的设计，可以显示出目前所在页面的具体路径”，可以整理成“网页中加入面包屑导航设计”，然后继续写清楚层级、哪些节点能点、点击后去哪里等等，以及还有哪些细节没确定。
+1. **🧭 需求梳理**：先用一两句话说明当前理解，再展开目标、场景、功能、流程和约束。
+2. **🔎 还没说清楚的地方**：列出歧义、冲突、缺失信息、边界情况和风险。
+3. **❓ 需要你确认的问题**：提出具体、可以直接回答、会影响需求的选择。
+4. **✅ 当前共识**：说明哪些内容已经确认、哪些仍是暂定理解，以及是否已经对齐。
 
-在当前共识阶段，AI 会评估当前理解是否已经与用户的需求对齐，以及现有的关键问题是否已经尽可能解决。用户确认后，Intent Debugger 的任务就结束了，不会自动转入任何规划、设计或实现工作。
+后续回答会继续更新这份需求草稿：保留已经确认的信息，修正理解错误，不重复追问已经解决的问题。
 
-## 完整示例
+## 💬 一个简单例子
 
-[`examples/team-knowledge-base.md`](examples/team-knowledge-base.md) 展示了一个完整过程：用户先用很口语的方式描述“团队找资料”，Intent Debugger 经过两轮确认形成一份已经对齐的需求说明。
+用户原话：
 
-## 仓库结构
+> 我想在网页里加一个首页 / 控制面板 / 键盘这样一级一级跳过去的东西，还要能看见现在在哪一层。
 
-```text
-.
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   └── improvement-candidate.yml
-│   └── PULL_REQUEST_TEMPLATE.md
-├── adapters/
-│   ├── claude-code/
-│   │   └── README.md
-│   └── deepseek/
-│       └── README.md
-├── assets/
-│   ├── social-preview.jpg
-│   └── xiaohongshu-cover.jpg
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── evals/
-│   └── cases.md
-├── examples/
-│   └── team-knowledge-base.md
-└── skill/
-    └── intent-debugger/
-        ├── SKILL.md
-        ├── agents/
-        │   └── openai.yaml
-        └── references/
-            └── contribution-candidate.md
-```
+Intent Debugger 会先建立原描述和专业术语之间的对应关系：
 
-## 参与贡献
+> 在网页中加入**面包屑导航（Breadcrumb Navigation）**，展示用户当前所在的层级路径，并允许用户返回上级页面。
 
-没有仓库写入权限也可以贡献。用户明确提出时，Intent Debugger 可以先把使用反馈整理成规范的改进候选；用户核对后通过公开 Issue 提交，已经准备好具体修改的用户也可以 Fork 仓库并发起 Pull Request。所有候选都由维护者公开审核，不会因为是 AI 生成就自动写入或合并。
+但它不会停在术语替换上，还会继续确认：哪些层级可以点击、当前页面是否可点击、路径过长时怎样显示、用户通过其他入口进入页面时路径如何生成。确认后的结果会写回同一份需求草稿。
 
-- [提交改进候选](../../issues/new?template=improvement-candidate.yml)
-- [查看完整贡献说明](CONTRIBUTING.md)
+[查看“团队知识库搜索工具”的完整两轮示例 →](examples/team-knowledge-base.md)
 
-## 验收
+## 🧭 它和 Plan 模式有什么不同
 
-使用 [`evals/cases.md`](evals/cases.md) 中的场景进行行为验收。重点检查实际决策：
+Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目里准备怎么做”。
 
-- 是否在不改变用户目标的前提下，形成了有依据、可核对的需求理解；
+| | Intent Debugger | Plan 模式 |
+| --- | --- | --- |
+| 要回答的问题 | 到底要做什么，为什么做，边界在哪里？ | 已经确认的需求该怎么落地？ |
+| 适合的输入 | 口语化想法、愿景、零散功能、互相冲突的描述 | 范围和验收标准已经清楚的任务 |
+| 主要产出 | 整理后的需求、尚未解决的问题、需要用户确认的选择 | 结合现有项目形成的实施步骤、改动范围和验证办法 |
+| 是否进入技术层面 | 不进入 | 可以进入，但仍不等于已经开始执行 |
+
+这里只比较两者的职责，不规定固定的使用顺序。它们可以独立使用，是否需要其中任何一个，取决于当时的问题。
+
+## 🚧 工作边界
+
+| Intent Debugger 会做 | Intent Debugger 不会做 |
+| --- | --- |
+| 保留用户原本的目标 | 擅自增加用户没有提出的功能 |
+| 让描述更清楚、具体、专业 | 用术语掩盖仍未理解的地方 |
+| 指出真正影响需求的问题 | 为了凑格式制造无关问题 |
+| 等待用户确认关键理解 | 自动进入设计、技术方案或代码实现 |
+
+当用户确认需求无误、关键问题已经回答且不存在重大歧义时，Intent Debugger 的任务就结束了。它不会自动转入任何规划、设计或实现工作。
+
+## 🤝 参与贡献
+
+没有仓库写入权限也可以贡献。你可以先让 Intent Debugger 把使用反馈整理成规范的改进候选，核对后通过公开 Issue 提交；已经准备好具体修改的用户，也可以 Fork 仓库并发起 Pull Request。
+
+- [📝 提交改进候选](https://github.com/bydtesla1609/intent-debugger/issues/new?template=improvement-candidate.yml)
+- [📖 查看贡献说明](CONTRIBUTING.md)
+- [🐛 浏览 Issues](https://github.com/bydtesla1609/intent-debugger/issues)
+
+所有候选都由维护者公开审核，不会因为内容由 AI 整理就自动写入或合并。
+
+## 🧪 行为验收
+
+仓库使用 [`evals/cases.md`](evals/cases.md) 中的场景检查 Skill 的实际行为，而不是只检查它有没有输出固定标题。
+
+<details>
+<summary><strong>查看主要验收标准</strong></summary>
+
+- 是否在不改变用户目标的前提下，形成有依据、可核对的需求理解；
 - 是否把合理推断标为暂定理解，而不是用户已经确认的事实；
-- 是否发现真实的歧义或冲突；
+- 是否发现真实的歧义、冲突、边界情况或风险；
 - 是否提出可直接回答、会影响决策的问题；
 - 是否在未对齐前避免技术方案和代码；
-- 需求梳理是否既准确，又比用户原话更清楚、更具体；
-- 多轮确认时，是否保留已经确认的信息、及时修正错误理解，并停止追问已经解决的问题；
+- 多轮确认时，是否保留已确认信息、及时修正错误并停止重复追问；
 - 表达是否自然，有没有机械套模板、重复解释或滥用术语。
+
+</details>
+
+## 📄 License
+
+本项目采用 [MIT License](LICENSE) 开源。
+
+<p align="center">
+  <strong>先把“要做什么”说清楚，再判断 AI 是否真的理解了你。</strong><br>
+  如果这个项目对你有帮助，欢迎点一个 Star ⭐
+</p>

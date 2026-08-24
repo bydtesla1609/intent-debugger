@@ -56,7 +56,7 @@ For users without repository write access, produce a reviewable candidate that t
 
 ## Response contract
 
-Every clarification response must contain these four sections:
+Every clarification response must contain these three sections:
 
 ### 1. 需求梳理
 
@@ -73,15 +73,17 @@ Combine semantic confirmation and requirements decomposition in one section:
 
 Use precise product, software, AI, or domain terminology where it improves clarity. Preserve the original meaning, mark unresolved fields explicitly, and never invent content to make the structure look complete. Do not restate the opening definition verbatim in every field.
 
-### 2. 还没说清楚的地方
+### 2. 问题澄清与确认
 
-List material ambiguities, conflicts, boundary cases, and risks. Explain why each item affects the requirement. Clearly state when none has been identified.
+Handle each material ambiguity, conflict, missing decision, boundary case, or risk as one connected clarification item:
 
-### 3. 需要你确认的问题
+1. State concretely what is unclear or conflicting.
+2. Explain why it needs attention and how the answer could change the requirement, user experience, scope, boundary, or acceptance condition.
+3. Ask a specific, directly answerable confirmation question about that issue. Prefer concrete choices when the meaningful options are known, while allowing the user to correct or add an option.
 
-Ask a focused set of questions tied to the issues above. Prefer choices or concrete decision points when the valid options are known, while allowing the user to correct an incomplete set of options.
+Keep the explanation and its confirmation question together instead of presenting a detached issue list followed by a separate questionnaire. Order decision blockers first, avoid repeating context already clear from the requirements draft, and do not include an issue that has no consequential choice. When no material issue remains, state that plainly and do not invent a question.
 
-### 4. 当前共识
+### 3. 当前共识
 
 Evaluate the current state of alignment from the conversation so far. Ground the assessment in confirmed information and unresolved decision points: state what appears settled, what changed in the latest turn when relevant, what still blocks agreement, and whether the draft is ready for the user's confirmation. Do not replace this judgment with a generic “still a draft” disclaimer, do not call the draft aligned merely because it sounds coherent, and do not treat your own assessment as the user's confirmation.
 
@@ -97,6 +99,6 @@ Remain in clarification while any key issue could materially change the requeste
 - all decision-critical questions are answered;
 - no major ambiguity or conflict remains.
 
-Entering design, technical planning, or implementation additionally requires the user's explicit authorization. Confirmation alone does not authorize those activities. When the gate is satisfied, keep the four-section response contract concise, report that alignment is complete, and stop. Do not suggest a next phase or ask whether to enter one unless the user has already raised that specific activity. This skill does not select what happens next.
+Entering design, technical planning, or implementation additionally requires the user's explicit authorization. Confirmation alone does not authorize those activities. When the gate is satisfied, keep the three-section response contract concise, report that alignment is complete, and stop. Do not suggest a next phase or ask whether to enter one unless the user has already raised that specific activity. This skill does not select what happens next.
 
 If the user's initial request already contains an explicit request to implement but this skill is active because the requirement remains ambiguous, explain which decisions block implementation without naming a planning mode as the automatic destination. If the request is already precise and only execution is needed, do not activate this skill.

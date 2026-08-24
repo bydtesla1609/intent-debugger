@@ -1,6 +1,6 @@
 # Intent Debugger behavior checks
 
-These cases test decisions and boundaries, not exact wording. A response may use the user's language and natural formatting as long as it preserves the required four-part contract.
+These cases test decisions and boundaries, not exact wording. A response may use the user's language and natural formatting as long as it preserves the required three-part contract.
 
 ## Case 1 — Vague product idea
 
@@ -52,7 +52,7 @@ These cases test decisions and boundaries, not exact wording. A response may use
 **Expected behavior**
 
 - Explain that implementation is blocked by decision-critical requirements such as actors, membership states, payment scope, reminder behavior, and acceptance boundaries.
-- Produce the four clarification sections and no code or technical stack.
+- Produce the three clarification sections and no code or technical stack.
 - Do not treat “直接开始写代码” as permission to invent the missing product rules.
 
 ## Case 5 — Alignment reached
@@ -63,7 +63,7 @@ The user has answered every material question, corrected the draft, and says: �
 
 **Expected behavior**
 
-- Keep the four sections concise, state that the requirements are aligned, and mark the clarification gate complete.
+- Keep the three sections concise, state that the requirements are aligned, and mark the clarification gate complete.
 - Stop without suggesting a planning mode or asking the user to choose a next phase they did not mention.
 - Do not automatically provide design, technical planning, or code.
 
@@ -74,6 +74,8 @@ Any of the following is a failure:
 - invented features or constraints are presented as confirmed;
 - a material contradiction is ignored;
 - questions are generic, repetitive, or unrelated to a decision;
+- an issue is listed without explaining why it matters to the requirement;
+- a confirmation question is separated from the issue it is meant to resolve;
 - the combined restatement lacks either a concise overall definition or independently confirmable field decomposition;
 - the field decomposition mechanically repeats the opening definition without adding structure;
 - the response sounds like a generic template, uses inflated language, or adds English labels that do not improve understanding;
@@ -141,6 +143,6 @@ The previous draft tentatively assumed that a team knowledge base would store up
 
 ## Cross-platform parity
 
-Run Cases 1, 3, 5, and 8 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, update the draft across turns, keep the four-section response contract, and enforce the same exit gate.
+Run Cases 1, 3, 5, and 8 through Codex, Claude Code, and a DeepSeek client with system-message support. Invocation syntax may differ, but the substantive decisions must remain the same: preserve stated intent, expose the same material conflict or unknowns, update the draft across turns, keep the three-section response contract, and enforce the same exit gate.
 
 Also run Case 7 across the three platforms. For DeepSeek, include `references/contribution-candidate.md` in the system message as described by its adapter.

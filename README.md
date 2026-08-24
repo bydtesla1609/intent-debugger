@@ -92,7 +92,7 @@ Intent Debugger 会先建立原描述和专业术语之间的对应关系：
 
 [查看“团队知识库搜索工具”的完整使用示例 →](examples/team-knowledge-base.md)
 
-## 🧭 它和 Plan 模式有什么不同
+## 🧐 它和 Plan 模式有什么不同
 
 Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目里准备怎么做”。
 
@@ -120,13 +120,13 @@ Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目�
 
 没有仓库写入权限也可以贡献。你可以先让 Intent Debugger 把使用反馈整理成规范的改进候选，核对后通过公开 Issue 提交；已经准备好具体修改的用户，也可以 Fork 仓库并发起 Pull Request。
 
-- [📝 提交改进候选](https://github.com/bydtesla1609/intent-debugger/issues/new?template=improvement-candidate.yml)
-- [📖 查看贡献说明](CONTRIBUTING.md)
-- [🐛 浏览 Issues](https://github.com/bydtesla1609/intent-debugger/issues)
+- [提交改进候选](https://github.com/bydtesla1609/intent-debugger/issues/new?template=improvement-candidate.yml)
+- [查看贡献说明](CONTRIBUTING.md)
+- [浏览 Issues](https://github.com/bydtesla1609/intent-debugger/issues)
 
 所有候选都由维护者公开审核，不会因为内容由 AI 整理就自动写入或合并。
 
-## 🧪 行为验收
+## 📖 行为验收
 
 仓库使用 [`evals/cases.md`](evals/cases.md) 中的场景检查 Skill 的实际行为，而不是只检查它有没有输出固定标题。
 

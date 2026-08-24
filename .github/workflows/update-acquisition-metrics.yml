@@ -1,4 +1,4 @@
-name: Update acquisition metrics
+name: Update clone metrics
 
 on:
   schedule:
@@ -9,28 +9,18 @@ permissions:
   contents: write
 
 concurrency:
-  group: acquisition-metrics
+  group: clone-metrics
   cancel-in-progress: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-
       - name: Update totals
         env:
           GH_TOKEN: ${{ github.token }}
           TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
-        run: python3 scripts/update_acquisition_metrics.py
-
-      - name: Commit changed totals
         run: |
-          if git diff --quiet -- metrics; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add metrics
-          git commit -m "Update acquisition metrics"
-          git push
+          script_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/scripts/update_acquisition_metrics.py"
+          curl --fail --silent --show-error "$script_url" --output "$RUNNER_TEMP/update_clone_metrics.py"
+          python3 "$RUNNER_TEMP/update_clone_metrics.py"

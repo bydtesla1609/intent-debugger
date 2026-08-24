@@ -26,8 +26,7 @@
   <a href="adapters/deepseek/README.md"><img src="https://img.shields.io/badge/DeepSeek-Compatible-4D6BFE" alt="DeepSeek Compatible"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/bydtesla1609/intent-debugger?color=2563eb" alt="License"></a>
   <a href="https://github.com/bydtesla1609/intent-debugger/stargazers"><img src="https://img.shields.io/github/stars/bydtesla1609/intent-debugger?style=flat&amp;color=f5a623" alt="GitHub Stars"></a>
-  <a href="metrics/acquisitions.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbydtesla1609%2Fintent-debugger%2Fmain%2Fmetrics%2Facquisitions-badge.json&amp;label=%E7%B4%AF%E8%AE%A1%E8%8E%B7%E5%8F%96" alt="累计获取次数"></a>
-  <a href="https://github.com/bydtesla1609/intent-debugger/releases/latest/download/intent-debugger-skill.zip"><img src="https://img.shields.io/github/downloads/bydtesla1609/intent-debugger/intent-debugger-skill.zip?label=ZIP%20%E4%B8%8B%E8%BD%BD&amp;color=7c3aed" alt="ZIP 下载次数"></a>
+  <a href="metrics/acquisitions.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbydtesla1609%2Fintent-debugger%2Fmain%2Fmetrics%2Facquisitions-badge.json&amp;label=%E7%B4%AF%E8%AE%A1%20Clone" alt="累计 Clone 次数"></a>
 </p>
 
 <p align="center">
@@ -74,9 +73,7 @@ Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目�
 
 ## ⚡ 快速开始
 
-如果只想获取核心 Skill，可以直接下载 [`intent-debugger-skill.zip`](https://github.com/bydtesla1609/intent-debugger/releases/latest/download/intent-debugger-skill.zip)。解压后会得到完整的 `intent-debugger` 文件夹，再按所用平台放到对应位置即可。
-
-README 顶部的“累计获取”由仓库的完整 Clone 次数与正式 Release 中 `intent-debugger-skill.zip` 的下载次数相加得到。它表示项目被主动获取的次数，不等同于实际安装人数或活跃用户数；[查看公开统计明细](metrics/acquisitions.json)。
+README 顶部会累计仓库的完整 Clone 次数。它表示仓库被克隆的次数，不等同于实际安装人数或活跃用户数；[查看公开统计明细](metrics/acquisitions.json)。
 
 ### <img src="https://developers.openai.com/favicon.svg" alt="Codex 图标" width="22" height="22"> Codex
 

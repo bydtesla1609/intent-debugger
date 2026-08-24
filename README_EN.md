@@ -55,16 +55,6 @@ Each clarification turn has three parts:
 3. **✅ Current alignment**: distinguishes confirmed information, tentative interpretations, and unresolved decisions, then states whether the requirements are aligned.
 
 Until the user confirms alignment, Intent Debugger keeps updating the same draft: it preserves settled information, applies corrections, and asks only about decisions that still matter.
-
-## 🚧 Boundaries
-
-| Intent Debugger does | Intent Debugger does not |
-| --- | --- |
-| Preserve the user's original goal | Add features the user did not request |
-| Make the description clearer, more specific, and professionally expressed | Use terminology to hide an incomplete understanding |
-| Surface issues that can materially change the requirement | Invent questions merely to fill a template |
-| Wait for the user to confirm key interpretations | Automatically enter design, technical planning, or implementation |
-
 Intent Debugger finishes when the user confirms the requirements, all decision-critical questions are answered, and no major ambiguity remains. It does not automatically move into planning, design, or implementation.
 
 ## 🧐 How is this different from Plan mode?

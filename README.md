@@ -154,6 +154,5 @@ Intent Debugger 会先建立原描述和专业术语之间的对应关系：
 本项目采用 [MIT License](LICENSE) 开源。
 
 <p align="center">
-  <strong>先把“要做什么”说清楚，再判断 AI 是否真的理解了你。</strong><br>
   如果这个项目对你有帮助，欢迎点一个 Star ⭐
 </p>

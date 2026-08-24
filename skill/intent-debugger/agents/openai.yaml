@@ -1,4 +1,4 @@
 interface:
   display_name: "Intent Debugger"
-  short_description: "Clarify vague ideas without planning implementation"
-  default_prompt: "Use $intent-debugger to turn my rough idea into a clear requirements draft and identify what still needs a decision."
+  short_description: "Clarify requirements and align user intent"
+  default_prompt: "Use $intent-debugger to turn my rough idea into a clear, checkable requirements draft and confirm that it matches what I mean."

@@ -1,4 +1,10 @@
 <p align="center">
+  <strong>简体中文</strong>
+  &nbsp;·&nbsp;
+  <a href="README_EN.md">English</a>
+</p>
+
+<p align="center">
   <img src="assets/social-preview.jpg" alt="Intent Debugger：需求澄清与意图对齐" width="960">
 </p>
 
@@ -10,8 +16,13 @@
 </p>
 
 <p align="center">
+  <a href="skill/intent-debugger/SKILL.md"><img src="https://developers.openai.com/favicon.svg" alt="Codex 图标" width="20" height="20"></a>
   <a href="skill/intent-debugger/SKILL.md"><img src="https://img.shields.io/badge/Codex-Skill-111827" alt="Codex Skill"></a>
+  &nbsp;
+  <a href="adapters/claude-code/README.md"><img src="https://claude.ai/favicon.svg" alt="Claude Code 图标" width="20" height="20"></a>
   <a href="adapters/claude-code/README.md"><img src="https://img.shields.io/badge/Claude_Code-Compatible-D97757" alt="Claude Code Compatible"></a>
+  &nbsp;
+  <a href="adapters/deepseek/README.md"><img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek 图标" width="20" height="20"></a>
   <a href="adapters/deepseek/README.md"><img src="https://img.shields.io/badge/DeepSeek-Compatible-4D6BFE" alt="DeepSeek Compatible"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/bydtesla1609/intent-debugger?color=2563eb" alt="License"></a>
   <a href="https://github.com/bydtesla1609/intent-debugger/stargazers"><img src="https://img.shields.io/github/stars/bydtesla1609/intent-debugger?style=flat&amp;color=f5a623" alt="GitHub Stars"></a>
@@ -20,9 +31,9 @@
 <p align="center">
   <a href="#-快速开始">⚡ 快速开始</a>
   &nbsp;·&nbsp;
-  <a href="#-使用示例">💬 使用示例</a>
+  <a href="#-使用示例">📝 使用示例</a>
   &nbsp;·&nbsp;
-  <a href="#-它和-plan-模式有什么不同">🧭 与 Plan 的区别</a>
+  <a href="#-它和-plan-模式有什么不同">🧐 与 Plan 的区别</a>
   &nbsp;·&nbsp;
   <a href="#-参与贡献">🤝 参与贡献</a>
 </p>
@@ -67,9 +78,11 @@ Intent Debugger 回答“到底要做什么”，Plan 回答“在具体项目�
 | 主要产出 | 整理后的需求、尚未解决的问题、需要用户确认的选择 | 结合现有项目形成的实施步骤、改动范围和验证办法 |
 | 是否进入技术层面 | 不进入 | 可以进入 |
 
+这里只比较两者的职责，不规定固定的使用顺序；它们可以独立使用。
+
 ## ⚡ 快速开始
 
-### Codex
+### <img src="https://developers.openai.com/favicon.svg" alt="Codex 图标" width="22" height="22"> Codex
 
 将 [`skill/intent-debugger`](skill/intent-debugger) 复制到 Codex 的个人 Skill 目录：
 
@@ -85,7 +98,7 @@ $CODEX_HOME/skills/intent-debugger
 
 在明显属于模糊需求澄清的场景中，Codex 也可以根据 Skill 描述自动选择它。
 
-### Claude Code
+### <img src="https://claude.ai/favicon.svg" alt="Claude Code 图标" width="22" height="22"> Claude Code
 
 Claude Code 支持读取 `SKILL.md`。将 [`skill/intent-debugger`](skill/intent-debugger) 复制到以下任一位置：
 
@@ -94,7 +107,7 @@ Claude Code 支持读取 `SKILL.md`。将 [`skill/intent-debugger`](skill/intent
 
 然后输入 `/intent-debugger` 显式调用，也可以由 Claude Code 根据 `description` 选择。具体说明见 [Claude Code 适配指南](adapters/claude-code/README.md)。
 
-### DeepSeek
+### <img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek 图标" width="22" height="22"> DeepSeek
 
 DeepSeek API 没有相同的文件式 Skill 发现机制。使用 DeepSeek API 或支持 system prompt 的客户端时，将 [`SKILL.md`](skill/intent-debugger/SKILL.md) 的完整内容作为首条 `system` 消息，再把具体想法作为 `user` 消息发送。具体说明见 [DeepSeek 适配指南](adapters/deepseek/README.md)。
 

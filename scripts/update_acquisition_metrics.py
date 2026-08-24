@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Persist repository clone events as a cumulative total."""
+"""Persist repository clones and release ZIP downloads as one total."""
 
 from __future__ import annotations
 
@@ -86,12 +86,31 @@ def save_json(path: Path, value: dict, sha: str | None, *, compact: bool) -> Non
         token=CONTENTS_TOKEN,
         method="PUT",
         body={
-            "message": "Update clone metrics",
+            "message": "Update download metrics",
             "content": base64.b64encode(content.encode()).decode(),
             "sha": sha,
             "branch": BRANCH,
         },
     )
+
+
+def release_zip_downloads() -> int:
+    total = 0
+    page = 1
+    while True:
+        releases = github_json(
+            f"/repos/{REPOSITORY}/releases?per_page=100&page={page}",
+            token=CONTENTS_TOKEN,
+        )
+        for release in releases:
+            total += sum(
+                int(asset["download_count"])
+                for asset in release.get("assets", [])
+                if asset.get("name") == "intent-debugger-skill.zip"
+            )
+        if len(releases) < 100:
+            return total
+        page += 1
 
 
 def main() -> None:
@@ -119,30 +138,42 @@ def main() -> None:
                 clone_days[date] = max(clone_days.get(date, 0), count)
 
     clone_count = sum(clone_days.values())
+    zip_download_count = release_zip_downloads()
+    total_downloads = clone_count + zip_download_count
     badge = {
         "schemaVersion": 1,
-        "label": "total clones",
-        "message": str(clone_count),
+        "label": "total downloads",
+        "message": str(total_downloads),
         "color": "0ea5e9",
     }
     changed = (
         clone_days != metrics["clone_days"]
         or clone_count != metrics["clone_count"]
+        or zip_download_count != metrics.get("zip_download_count")
+        or total_downloads != metrics.get("total_downloads")
         or previous_badge != badge
     )
 
     metrics["clone_days"] = dict(sorted(clone_days.items()))
     metrics["clone_count"] = clone_count
+    metrics["zip_download_count"] = zip_download_count
+    metrics["total_downloads"] = total_downloads
     if changed:
         metrics["updated_at"] = dt.datetime.now(dt.timezone.utc).replace(
             microsecond=0
         ).isoformat().replace("+00:00", "Z")
 
     assert metrics["clone_count"] == sum(metrics["clone_days"].values())
+    assert metrics["total_downloads"] == (
+        metrics["clone_count"] + metrics["zip_download_count"]
+    )
     if changed or not RUNNING_IN_ACTIONS:
         save_json(METRICS_PATH, metrics, metrics_sha, compact=False)
         save_json(BADGE_PATH, badge, badge_sha, compact=True)
-    print(f"clones={clone_count}")
+    print(
+        f"clones={clone_count} zip_downloads={zip_download_count} "
+        f"total_downloads={total_downloads}"
+    )
 
 
 if __name__ == "__main__":

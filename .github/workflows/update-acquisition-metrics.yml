@@ -1,4 +1,4 @@
-name: Update clone metrics
+name: Update download metrics
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: clone-metrics
+  group: download-metrics
   cancel-in-progress: true
 
 jobs:

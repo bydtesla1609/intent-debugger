@@ -26,7 +26,7 @@
   <a href="adapters/deepseek/README.md"><img src="https://img.shields.io/badge/DeepSeek-Compatible-4D6BFE" alt="DeepSeek Compatible"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/bydtesla1609/intent-debugger?color=2563eb" alt="License"></a>
   <a href="https://github.com/bydtesla1609/intent-debugger/stargazers"><img src="https://img.shields.io/github/stars/bydtesla1609/intent-debugger?style=flat&amp;color=f5a623" alt="GitHub Stars"></a>
-  <a href="metrics/acquisitions.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbydtesla1609%2Fintent-debugger%2Fmain%2Fmetrics%2Facquisitions-badge.json" alt="Total clones"></a>
+  <a href="metrics/acquisitions.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fbydtesla1609%2Fintent-debugger%2Fmain%2Fmetrics%2Facquisitions-badge.json" alt="Total downloads"></a>
 </p>
 
 <p align="center">
@@ -73,7 +73,9 @@ This is a comparison of responsibilities, not a required sequence. Either tool c
 
 ## ⚡ Quick start
 
-The badge at the top of this README accumulates full repository clones. It measures clone events, not installations or active users. [View the public metric breakdown](metrics/acquisitions.json).
+To get only the core skill, download [`intent-debugger-skill.zip`](https://github.com/bydtesla1609/intent-debugger/releases/latest/download/intent-debugger-skill.zip). It extracts to a complete `intent-debugger` folder that you can place in the directory used by your platform.
+
+The “total downloads” badge combines full repository clones with downloads of the official ZIP. It measures how often the project was actively obtained, not installations or active users. [View the public metric breakdown](metrics/acquisitions.json).
 
 ### <img src="https://developers.openai.com/favicon.svg" alt="Codex icon" width="22" height="22"> Codex
 
